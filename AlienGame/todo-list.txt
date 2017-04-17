@@ -1,8 +1,6 @@
 Current:
 --------
 
--set up SFML
-	-set up properties (for both .sln files)
 -start doing stuff
 
 
