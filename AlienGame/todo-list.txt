@@ -1,0 +1,17 @@
+Current:
+--------
+
+-set up Catch
+-set up SFML
+-start doing stuff
+
+
+Eventually:
+-----------
+
+
+
+
+Considerable:
+-------------
+
