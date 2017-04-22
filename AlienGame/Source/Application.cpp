@@ -11,9 +11,18 @@ const sf::Time Application::TimePerFrame = sf::seconds(1.f / 60.f);
 Application::Application()
   : mWindow(sf::VideoMode(WindowWidth, WindowHeight),
     "Alien Game", sf::Style::Close)
+  , mStatisticsFont()
+  , mStatisticsText()
+  , mStatisticsUpdateTime()
+  , mStatisticsNumFrames(0)
 {
   mWindow.setKeyRepeatEnabled(false);
-  
+
+  // Load it from a file
+  mStatisticsFont.loadFromFile("Media/Sansation.ttf");
+  mStatisticsText.setFont(mStatisticsFont);
+  mStatisticsText.setPosition(5.f, 5.f);
+  mStatisticsText.setCharacterSize(10u);
 } // Application()
 
 
@@ -36,7 +45,8 @@ void Application::run()
       processInput();
       update(TimePerFrame);
     }
-    
+
+    updateFramerateStatistics(dt);
     render();
   } // while window is open
 } // run()
@@ -57,6 +67,7 @@ void Application::processInput()
 void Application::render()
 {
   mWindow.clear();
+  mWindow.draw(mStatisticsText);
   mWindow.display();
 } // render()
 
@@ -65,3 +76,19 @@ void Application::update(sf::Time dt)
 {
   
 } // update()
+
+
+void Application::updateFramerateStatistics(sf::Time dt)
+{
+  mStatisticsUpdateTime += dt;
+  mStatisticsNumFrames += 1;
+
+  // Only print the number of frames once per second
+  if (mStatisticsUpdateTime >= sf::seconds(1.0f))
+  {
+    mStatisticsText.setString("FPS: " + std::to_string(mStatisticsNumFrames));
+
+    mStatisticsUpdateTime -= sf::seconds(1.0f);
+    mStatisticsNumFrames = 0;
+  }
+} // updateFramerateStatistics()

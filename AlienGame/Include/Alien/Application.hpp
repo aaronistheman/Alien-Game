@@ -9,6 +9,7 @@
 #include <SFML/System/Time.hpp>
 #include <SFML/System/NonCopyable.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/Text.hpp>
 
 
 class Application : private sf::NonCopyable
@@ -23,6 +24,8 @@ private:
   void render();
   void update(sf::Time dt);
 
+  void  updateFramerateStatistics(sf::Time dt);
+
 private:
   static const int WindowWidth;
   static const int WindowHeight;
@@ -32,4 +35,9 @@ private:
 private:
   sf::RenderWindow mWindow;
 
+  // For showing frame rate statistics
+  sf::Font mStatisticsFont;
+  sf::Text				mStatisticsText;
+  sf::Time				mStatisticsUpdateTime;
+  std::size_t				mStatisticsNumFrames;
 }; // class Application
