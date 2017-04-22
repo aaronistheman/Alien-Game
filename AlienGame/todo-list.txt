@@ -1,15 +1,45 @@
 Current:
 --------
 
--start doing stuff
+-main window and application framework
+-player movement/rotation
+
 
 
 Eventually:
 -----------
 
-
+-player can shoot projectiles
+-enemy movement
+-enemy types
+	-dummy (heads straight toward the player)
+	-special ones with key characteristics ("bosses")
+		-ideas for how they behave:
+			-one that alternates between being invisible and visible
+			-one that can teleport
+			-really big one that doesn't move if it's being shot,
+			but that has a lot of health
+		-they could have health indicators
+-collision detection
+	-of enemy with player
+		-radial collision detection?
+	-of enemy with projectile
+-how to end a level?
+	-maybe have no levels?
+	-have levels?
+		-if so, can have the special enemies appear in each level
+-different types of player shooters
+-KEY FEATURE: only render the stuff in the player's view
 
 
 Considerable:
 -------------
 
+-back-end
+	-user can log in, log out, and sign in, with the back-end doing
+	this authentication
+	-save high scores
+-sound effects
+-background music
+-can left click an entity to have its health (and other info)
+be shown
