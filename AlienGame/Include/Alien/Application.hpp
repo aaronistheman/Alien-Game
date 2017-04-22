@@ -19,6 +19,11 @@ public:
   void run();
 
 private:
+  void processInput();
+  void render();
+  void update(sf::Time dt);
+
+private:
   static const int WindowWidth;
   static const int WindowHeight;
 

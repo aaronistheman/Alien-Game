@@ -20,13 +20,48 @@ Application::Application()
 
 void Application::run()
 {
+  sf::Clock clock;
+  sf::Time timeSinceLastUpdate = sf::Time::Zero;
+
   while (mWindow.isOpen())
   {
-    sf::Event event;
-    while (mWindow.pollEvent(event))
+    sf::Time dt = clock.restart();
+    timeSinceLastUpdate += dt;
+
+    // Fixed time step
+    while (timeSinceLastUpdate > TimePerFrame)
     {
-      if (event.type == sf::Event::Closed)
-        mWindow.close();
+      timeSinceLastUpdate -= TimePerFrame;
+
+      processInput();
+      update(TimePerFrame);
     }
+    
+    render();
   } // while window is open
 } // run()
+
+
+void Application::processInput()
+{
+  sf::Event event;
+  while (mWindow.pollEvent(event))
+  {
+    if (event.type == sf::Event::Closed)
+      mWindow.close();
+  }
+} // processInput()
+
+
+
+void Application::render()
+{
+  mWindow.clear();
+  mWindow.display();
+} // render()
+
+
+void Application::update(sf::Time dt)
+{
+  
+} // update()

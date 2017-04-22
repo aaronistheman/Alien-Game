@@ -2,7 +2,10 @@ Current:
 --------
 
 -main window and application framework
+	-see SquareCannonade's Application.cpp
+		-print statistics
 -player movement/rotation
+-KEY FEATURE: make window size depend on computer resolution
 
 
 
