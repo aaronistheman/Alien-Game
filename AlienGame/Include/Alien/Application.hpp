@@ -11,6 +11,9 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Text.hpp>
 
+#include <Alien/Utility/ResourceIdentifiers.hpp>
+#include <Alien/Utility/ResourceHolder.hpp>
+
 
 class Application : private sf::NonCopyable
 {
@@ -35,8 +38,9 @@ private:
 private:
   sf::RenderWindow mWindow;
 
+  FontHolder mFonts;
+
   // For showing frame rate statistics
-  sf::Font mStatisticsFont;
   sf::Text				mStatisticsText;
   sf::Time				mStatisticsUpdateTime;
   std::size_t				mStatisticsNumFrames;

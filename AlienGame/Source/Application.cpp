@@ -11,16 +11,16 @@ const sf::Time Application::TimePerFrame = sf::seconds(1.f / 60.f);
 Application::Application()
   : mWindow(sf::VideoMode(WindowWidth, WindowHeight),
     "Alien Game", sf::Style::Close)
-  , mStatisticsFont()
+  , mFonts()
   , mStatisticsText()
   , mStatisticsUpdateTime()
   , mStatisticsNumFrames(0)
 {
   mWindow.setKeyRepeatEnabled(false);
 
-  // Load it from a file
-  mStatisticsFont.loadFromFile("Media/Sansation.ttf");
-  mStatisticsText.setFont(mStatisticsFont);
+  mFonts.load(Fonts::Main, "Media/Sansation.ttf");
+
+  mStatisticsText.setFont(mFonts.get(Fonts::Main));
   mStatisticsText.setPosition(5.f, 5.f);
   mStatisticsText.setCharacterSize(10u);
 } // Application()

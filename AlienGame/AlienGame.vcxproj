@@ -126,9 +126,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Alien\Application.hpp" />
+    <ClInclude Include="Include\Alien\Utility\ResourceHolder.hpp" />
+    <ClInclude Include="Include\Alien\Utility\ResourceIdentifiers.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
+    <None Include="Include\Alien\Utility\ResourceHolder.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

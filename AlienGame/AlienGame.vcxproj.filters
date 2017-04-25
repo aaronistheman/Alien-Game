@@ -31,10 +31,19 @@
     <ClInclude Include="Include\Alien\Application.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Alien\Utility\ResourceHolder.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Alien\Utility\ResourceIdentifiers.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Include\Alien\Utility\ResourceHolder.inl">
+      <Filter>Header Files</Filter>
     </None>
   </ItemGroup>
 </Project>
