@@ -1,4 +1,5 @@
 #include <Alien/Application.hpp>
+#include <Alien/States/GameState.hpp>
 
 #include <SFML/Window/Event.hpp>
 
@@ -11,7 +12,9 @@ const sf::Time Application::TimePerFrame = sf::seconds(1.f / 60.f);
 Application::Application()
   : mWindow(sf::VideoMode(WindowWidth, WindowHeight),
     "Alien Game", sf::Style::Close)
+  , mTextures()
   , mFonts()
+  , mStateStack(State::Context(mWindow, mTextures, mFonts))
   , mStatisticsText()
   , mStatisticsUpdateTime()
   , mStatisticsNumFrames(0)
@@ -23,6 +26,9 @@ Application::Application()
   mStatisticsText.setFont(mFonts.get(Fonts::Main));
   mStatisticsText.setPosition(5.f, 5.f);
   mStatisticsText.setCharacterSize(10u);
+
+  registerStates();
+  mStateStack.pushState(States::Game);
 } // Application()
 
 
@@ -44,6 +50,10 @@ void Application::run()
 
       processInput();
       update(TimePerFrame);
+
+      // Check inside this loop, because stack might be empty before update() call
+      if (mStateStack.isEmpty())
+        mWindow.close();
     }
 
     updateFramerateStatistics(dt);
@@ -67,14 +77,18 @@ void Application::processInput()
 void Application::render()
 {
   mWindow.clear();
+
+  mStateStack.draw();
+
   mWindow.draw(mStatisticsText);
+
   mWindow.display();
 } // render()
 
 
 void Application::update(sf::Time dt)
 {
-  
+  mStateStack.update(dt);
 } // update()
 
 
@@ -92,3 +106,9 @@ void Application::updateFramerateStatistics(sf::Time dt)
     mStatisticsNumFrames = 0;
   }
 } // updateFramerateStatistics()
+
+
+void Application::registerStates()
+{
+  mStateStack.registerState<GameState>(States::Game);
+} // registerStates()

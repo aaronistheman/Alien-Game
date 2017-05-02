@@ -11,6 +11,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Text.hpp>
 
+#include <Alien/States/StateStack.hpp>
 #include <Alien/Utility/ResourceIdentifiers.hpp>
 #include <Alien/Utility/ResourceHolder.hpp>
 
@@ -23,11 +24,12 @@ public:
   void run();
 
 private:
-  void processInput();
-  void render();
-  void update(sf::Time dt);
+  void          processInput();
+  void          render();
+  void          update(sf::Time dt);
 
-  void  updateFramerateStatistics(sf::Time dt);
+  void          updateFramerateStatistics(sf::Time dt);
+  void          registerStates();
 
 private:
   static const int WindowWidth;
@@ -38,7 +40,10 @@ private:
 private:
   sf::RenderWindow mWindow;
 
-  FontHolder mFonts;
+  TextureHolder			mTextures;
+  FontHolder        mFonts;
+
+  StateStack				mStateStack;
 
   // For showing frame rate statistics
   sf::Text				mStatisticsText;
