@@ -122,10 +122,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp" />
+    <ClCompile Include="Source\GameState.cpp" />
     <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\State.cpp" />
+    <ClCompile Include="Source\StateStack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Alien\Application.hpp" />
+    <ClInclude Include="Include\Alien\States\GameState.hpp" />
+    <ClInclude Include="Include\Alien\States\State.hpp" />
+    <ClInclude Include="Include\Alien\States\StateIdentifiers.hpp" />
+    <ClInclude Include="Include\Alien\States\StateStack.hpp" />
+    <ClInclude Include="Include\Alien\Utility\Foreach.hpp" />
     <ClInclude Include="Include\Alien\Utility\ResourceHolder.hpp" />
     <ClInclude Include="Include\Alien\Utility\ResourceIdentifiers.hpp" />
   </ItemGroup>
