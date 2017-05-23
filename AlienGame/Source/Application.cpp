@@ -3,9 +3,9 @@
 
 #include <SFML/Window/Event.hpp>
 
+#include <iostream>
 
-//const int Application::WindowWidth = 1200;
-//const int Application::WindowHeight = 600;
+
 const sf::Time Application::TimePerFrame = sf::seconds(1.f / 60.f);
 
 
@@ -66,12 +66,34 @@ void Application::run()
 
 void Application::chooseWindowSize()
 {
-  mWindowWidth = 1200;
-  mWindowHeight = 600;
-
   // Check the resolution of the user's computer, and with this information,
-  // decide the window width/height
+  // decide the window width/height by picking the highest of the selectable
+  // window sizes that is supported.
+  auto userDesktop = sf::VideoMode::getDesktopMode();
+  std::vector<std::pair<int, int>> selectableWindowSizes; // (width,height) pairs
+  selectableWindowSizes.push_back(std::pair<int, int>(1800, 900));
+  selectableWindowSizes.push_back(std::pair<int, int>(1500, 750));
+  selectableWindowSizes.push_back(std::pair<int, int>(1200, 600));
+  selectableWindowSizes.push_back(std::pair<int, int>(900, 450));
+  for (auto windowSize : selectableWindowSizes)
+  {
+    // If this window size is doable for the user (with a tolerance, since
+    // filling the user's screen with the window may not be best), select it
+    int tolerance = 200;
+    int selectableWidth = windowSize.first;
+    int selectableHeight = windowSize.second;
+    if ((selectableWidth + tolerance) < userDesktop.width
+      && (selectableHeight + tolerance) < userDesktop.height)
+    {
+      mWindowWidth = selectableWidth;
+      mWindowHeight = selectableHeight;
+      break;
+    }
+  } // for each selectable window size
 
+
+  std::cout << "Width: " << mWindowWidth << '\n';
+  std::cout << "Height: " << mWindowHeight << '\n';
 } // chooseWindowSize()
 
 

@@ -34,8 +34,6 @@ private:
   void          registerStates();
 
 private:
-  /*static const int WindowWidth;
-  static const int WindowHeight;*/
 
   static const sf::Time TimePerFrame;
 
