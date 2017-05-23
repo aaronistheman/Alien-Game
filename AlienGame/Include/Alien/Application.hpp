@@ -24,6 +24,8 @@ public:
   void run();
 
 private:
+  void          chooseWindowSize();
+
   void          processInput();
   void          render();
   void          update(sf::Time dt);
@@ -32,13 +34,13 @@ private:
   void          registerStates();
 
 private:
-  static const int WindowWidth;
-  static const int WindowHeight;
 
   static const sf::Time TimePerFrame;
 
 private:
-  sf::RenderWindow mWindow;
+  sf::RenderWindow    mWindow;
+  int                 mWindowHeight;
+  int                 mWindowWidth;
 
   TextureHolder			mTextures;
   FontHolder        mFonts;
