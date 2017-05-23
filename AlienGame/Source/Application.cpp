@@ -4,14 +4,13 @@
 #include <SFML/Window/Event.hpp>
 
 
-const int Application::WindowWidth = 1200;
-const int Application::WindowHeight = 600;
+//const int Application::WindowWidth = 1200;
+//const int Application::WindowHeight = 600;
 const sf::Time Application::TimePerFrame = sf::seconds(1.f / 60.f);
 
 
 Application::Application()
-  : mWindow(sf::VideoMode(WindowWidth, WindowHeight),
-    "Alien Game", sf::Style::Close)
+  : mWindow()
   , mTextures()
   , mFonts()
   , mStateStack(State::Context(mWindow, mTextures, mFonts))
@@ -19,6 +18,9 @@ Application::Application()
   , mStatisticsUpdateTime()
   , mStatisticsNumFrames(0)
 {
+  chooseWindowSize();
+  mWindow.create(sf::VideoMode(mWindowWidth, mWindowHeight), "Alien Game", sf::Style::Close);
+
   mWindow.setKeyRepeatEnabled(false);
 
   mFonts.load(Fonts::Main, "Media/Sansation.ttf");
@@ -60,6 +62,18 @@ void Application::run()
     render();
   } // while window is open
 } // run()
+
+
+void Application::chooseWindowSize()
+{
+  mWindowWidth = 1200;
+  mWindowHeight = 600;
+
+  // Check the resolution of the user's computer, and with this information,
+  // decide the window width/height
+
+} // chooseWindowSize()
+
 
 
 void Application::processInput()

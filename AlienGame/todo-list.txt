@@ -2,7 +2,10 @@ Current:
 --------
 
 -KEY FEATURE: make window size depend on computer resolution
+	-confirm that window size scaling works on my other laptop
 -player movement/rotation
+	-note that all entity's sizes will have to be scaled depending on the
+	window size
 
 
 
