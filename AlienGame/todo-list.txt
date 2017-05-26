@@ -2,7 +2,9 @@ Current:
 --------
 
 -player movement/rotation
-	-note that all entity's sizes will have to be scaled depending on the
+	-put player entity at center
+	-make player entity rotatable
+	-NOTE: all entity's sizes will have to be scaled depending on the
 	window size
 
 
@@ -44,4 +46,4 @@ Considerable:
 -background music
 -can left click an entity to have its health (and other info)
 be shown
--allow user to change screen resolution
+-allow user to change screen resolution, instead of the automatic determination

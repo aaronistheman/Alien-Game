@@ -126,6 +126,7 @@
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\State.cpp" />
     <ClCompile Include="Source\StateStack.cpp" />
+    <ClCompile Include="Source\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Alien\Application.hpp" />
@@ -136,6 +137,7 @@
     <ClInclude Include="Include\Alien\Utility\Foreach.hpp" />
     <ClInclude Include="Include\Alien\Utility\ResourceHolder.hpp" />
     <ClInclude Include="Include\Alien\Utility\ResourceIdentifiers.hpp" />
+    <ClInclude Include="Include\Alien\World\World.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
