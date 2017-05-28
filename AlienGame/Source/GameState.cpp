@@ -7,6 +7,7 @@
 GameState::GameState(StateStack& stack, Context context)
 : State(stack, context)
 , mJunkText()
+, mPlayer(*context.player)
 {
   mJunkText.setFont(context.fonts->get(Fonts::Main));
   mJunkText.setString("Hey");
@@ -20,6 +21,10 @@ void GameState::draw()
 
 bool GameState::update(sf::Time dt)
 {
+  //mWorld.update(dt);
+
+  //mPlayer.handleRealTimeInput(dt);
+
 	return true;
 }
 

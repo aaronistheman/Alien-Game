@@ -2,8 +2,11 @@ Current:
 --------
 
 -player movement/rotation
+	-move Player files to different folder
 	-put player entity at center
+		-make a drawable representation of the player
 	-make player entity rotatable
+		-use the Player class to handle real time input
 	-NOTE: all entity's sizes will have to be scaled depending on the
 	window size
 

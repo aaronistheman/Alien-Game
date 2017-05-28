@@ -7,6 +7,7 @@
 
 #include <Alien/States/StateIdentifiers.hpp>
 #include <Alien/Utility/ResourceIdentifiers.hpp>
+#include <Alien/Entities/Player.hpp>
 
 #include <SFML/System/Time.hpp>
 #include <SFML/Window/Event.hpp>
@@ -20,7 +21,7 @@ namespace sf
 }
 
 class StateStack;
-class Player;
+//class Player;
 
 class State
 {
@@ -29,11 +30,13 @@ class State
 
 		struct Context
 		{
-								Context(sf::RenderWindow& window, TextureHolder& textures, FontHolder& fonts);
+								Context(sf::RenderWindow& window, TextureHolder& textures,
+                  FontHolder& fonts, Player& player);
 
 			sf::RenderWindow*	window;
 			TextureHolder*		textures;
 			FontHolder*			fonts;
+      Player*				player;
 		};
 
 
