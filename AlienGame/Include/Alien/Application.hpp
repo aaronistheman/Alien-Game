@@ -45,7 +45,6 @@ private:
 
   TextureHolder			mTextures;
   FontHolder        mFonts;
-  Player					mPlayer;
 
   StateStack				mStateStack;
 

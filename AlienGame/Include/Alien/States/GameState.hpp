@@ -25,8 +25,6 @@ class GameState : public State
 
 	private:
     sf::Text      mJunkText;
-
-    Player&				mPlayer;
 };
 
 #endif // TANKS_GAMESTATE_HPP

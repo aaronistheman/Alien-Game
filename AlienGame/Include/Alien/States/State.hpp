@@ -31,12 +31,11 @@ class State
 		struct Context
 		{
 								Context(sf::RenderWindow& window, TextureHolder& textures,
-                  FontHolder& fonts, Player& player);
+                  FontHolder& fonts);
 
 			sf::RenderWindow*	window;
 			TextureHolder*		textures;
 			FontHolder*			fonts;
-      Player*				player;
 		};
 
 

@@ -2,6 +2,10 @@ Current:
 --------
 
 -player movement/rotation
+	-change Player class to match the style in Outer Space Legion
+		-remove Player from the context; store it in World only
+		-make the Player an entity that checks inputs in its update() method
+			-detect a key press
 	-move Player files to different folder
 	-put player entity at center
 		-make a drawable representation of the player

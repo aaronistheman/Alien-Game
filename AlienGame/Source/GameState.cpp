@@ -7,7 +7,6 @@
 GameState::GameState(StateStack& stack, Context context)
 : State(stack, context)
 , mJunkText()
-, mPlayer(*context.player)
 {
   mJunkText.setFont(context.fonts->get(Fonts::Main));
   mJunkText.setString("Hey");
