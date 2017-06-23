@@ -27,6 +27,7 @@ class World : private sf::NonCopyable
 public:
   World(sf::RenderWindow& window, FontHolder& fonts);
 
+  void                  draw();
   void                  update(sf::Time dt);
   void                  updateEntities(sf::Time dt);
 

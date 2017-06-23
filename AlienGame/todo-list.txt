@@ -2,11 +2,9 @@ Current:
 --------
 
 -player movement/rotation
-	-change Player class to match the style in Outer Space Legion
-		-other stuff?
-	-move Player files to different folder
 	-put player entity at center
-		-make a drawable representation of the player
+		-means I'll have to decide on a convention for setting center position;
+		create a method named setCenterPosition()
 	-make player entity rotatable
 		-use the Player class to handle real time input
 	-NOTE: all entity's sizes will have to be scaled depending on the

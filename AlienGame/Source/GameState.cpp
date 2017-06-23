@@ -7,16 +7,14 @@
 GameState::GameState(StateStack& stack, Context context)
 : State(stack, context)
 , mWorld(*context.window, *context.fonts)
-, mJunkText()
 {
-  mJunkText.setFont(context.fonts->get(Fonts::Main));
-  mJunkText.setString("Hey");
+  // mJunkText.setFont(context.fonts->get(Fonts::Main));
+  // mJunkText.setString("Hey");
 }
 
 void GameState::draw()
 {
-  sf::RenderWindow& window = *getContext().window;
-  window.draw(mJunkText);
+  mWorld.draw();
 }
 
 bool GameState::update(sf::Time dt)

@@ -27,8 +27,6 @@ class GameState : public State
 
 	private:
     World				mWorld;
-
-    sf::Text      mJunkText;
 };
 
 #endif // TANKS_GAMESTATE_HPP

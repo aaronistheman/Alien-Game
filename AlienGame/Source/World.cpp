@@ -13,6 +13,11 @@ World::World(sf::RenderWindow & window, FontHolder & fonts)
 
 }
 
+void World::draw()
+{
+  mPlayer.draw(mWindow);
+}
+
 void World::update(sf::Time dt)
 {
   updateEntities(dt);
