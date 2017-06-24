@@ -1,11 +1,10 @@
 #pragma once
 
 #include <Alien/Entities/Entity.hpp>
+#include <Alien/Entities/OneSpriteEntity.hpp>
 
-#include <SFML/Graphics/RectangleShape.hpp>
 
-
-class Player : public Entity
+class Player : public OneSpriteEntity
 {
 public:
   Player();
@@ -14,5 +13,5 @@ public:
   void      update(sf::Time dt)   final;
 
 private:
-  sf::RectangleShape      mSprite;
+  // nothing yet, please check again later
 };

@@ -3,8 +3,7 @@ Current:
 
 -player movement/rotation
 	-put player entity at center
-		-means I'll have to decide on a convention for setting center position;
-		create a method named setCenterPosition()
+		-OnespriteEntity::getCenterPosition()
 	-make player entity rotatable
 		-use the Player class to handle real time input
 	-NOTE: all entity's sizes will have to be scaled depending on the

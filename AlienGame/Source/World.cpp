@@ -10,6 +10,8 @@ World::World(sf::RenderWindow & window, FontHolder & fonts)
   , mFonts(fonts)
   , mPlayer()
 {
+  auto windowPos = window.getSize();
+  mPlayer.setCenterPosition(windowPos.x / 2, windowPos.y / 2);
 
 }
 

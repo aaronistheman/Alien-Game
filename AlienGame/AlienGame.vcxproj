@@ -125,6 +125,7 @@
     <ClCompile Include="Source\Entity.cpp" />
     <ClCompile Include="Source\GameState.cpp" />
     <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\OneSpriteEntity.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\State.cpp" />
     <ClCompile Include="Source\StateStack.cpp" />
@@ -133,6 +134,7 @@
   <ItemGroup>
     <ClInclude Include="Include\Alien\Application.hpp" />
     <ClInclude Include="Include\Alien\Entities\Entity.hpp" />
+    <ClInclude Include="Include\Alien\Entities\OneSpriteEntity.hpp" />
     <ClInclude Include="Include\Alien\Entities\Player.hpp" />
     <ClInclude Include="Include\Alien\States\GameState.hpp" />
     <ClInclude Include="Include\Alien\States\State.hpp" />

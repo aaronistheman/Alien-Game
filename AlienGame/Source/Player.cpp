@@ -5,7 +5,8 @@
 #include <iostream>
 
 Player::Player()
-  : mSprite(sf::Vector2f(30.f, 30.f))
+  //: mSprite(sf::Vector2f(30.f, 30.f))
+  : OneSpriteEntity(sf::Vector2f(30.f, 30.f))
 {
   setPosition(80.f, 80.f);
 }
