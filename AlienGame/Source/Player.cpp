@@ -2,8 +2,6 @@
 
 #include <SFML/Window/Keyboard.hpp>
 
-#include <iostream>
-
 Player::Player()
   //: mSprite(sf::Vector2f(30.f, 30.f))
   : OneSpriteEntity(sf::Vector2f(30.f, 30.f))
@@ -18,6 +16,8 @@ void Player::draw(sf::RenderTarget & target) const
 
 void Player::update(sf::Time dt)
 {
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-    std::cout << "You're sweet\n";
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+    mSprite.rotate(-1.f);
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+    mSprite.rotate(1.f);
 }
