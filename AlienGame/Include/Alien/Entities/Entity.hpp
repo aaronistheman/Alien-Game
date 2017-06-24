@@ -2,15 +2,19 @@
 
 #include <SFML/System/Time.hpp>
 #include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/Transformable.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/RenderStates.hpp>
 
 
-class Entity
+/**
+ * A transformable (and thus, positionable),
+ * drawable representation of any entity.
+ */
+class Entity : public sf::Transformable
 {
 public:
   Entity();
-  Entity(int posX, int posY);
 
   virtual void    draw(sf::RenderTarget& target) const = 0;
   virtual void    update(sf::Time dt) = 0;

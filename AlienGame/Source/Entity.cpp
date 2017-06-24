@@ -5,10 +5,3 @@ Entity::Entity()
   , mPosY(0)
 {
 }
-
-Entity::Entity(int posX, int posY)
-  : mPosX(posX)
-  , mPosY(posY)
-{
-
-}

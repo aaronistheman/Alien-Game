@@ -7,12 +7,12 @@
 Player::Player()
   : mSprite(sf::Vector2f(30.f, 30.f))
 {
-  mSprite.setPosition(80.f, 80.f);
+  setPosition(80.f, 80.f);
 }
 
 void Player::draw(sf::RenderTarget & target) const
 {
-  target.draw(mSprite);
+  target.draw(mSprite, getTransform());
 }
 
 void Player::update(sf::Time dt)
