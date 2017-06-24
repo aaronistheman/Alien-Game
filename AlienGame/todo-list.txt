@@ -3,7 +3,7 @@ Current:
 
 -player movement/rotation
 	-put player entity at center
-		-OnespriteEntity::getCenterPosition()
+		-test with 2nd sprite
 	-make player entity rotatable
 		-use the Player class to handle real time input
 	-NOTE: all entity's sizes will have to be scaled depending on the

@@ -14,6 +14,8 @@ public:
   //OneSpriteEntity();
   OneSpriteEntity(const sf::Vector2f& size);
 
+  const sf::Vector2f&     getCenterPosition() const;
+
   // Because SFML's Transformable::setPosition() sets the position
   // of the top-left coordinate, we have these for setting position
   // of the center (for cases where it's more convenient).
