@@ -7,6 +7,9 @@
 #define TANKS_GAMESTATE_HPP
 
 #include <Alien/States/State.hpp>
+#include <Alien/Entities/Player.hpp>
+#include <Alien/World/World.hpp>
+#include <SFML/System/Time.hpp>
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -23,7 +26,7 @@ class GameState : public State
 
 
 	private:
-    sf::Text      mJunkText;
+    World				mWorld;
 };
 
 #endif // TANKS_GAMESTATE_HPP

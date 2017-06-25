@@ -14,6 +14,7 @@
 #include <Alien/States/StateStack.hpp>
 #include <Alien/Utility/ResourceIdentifiers.hpp>
 #include <Alien/Utility/ResourceHolder.hpp>
+#include <Alien/Entities/Player.hpp>
 
 
 class Application : private sf::NonCopyable

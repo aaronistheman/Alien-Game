@@ -1,11 +1,9 @@
 Current:
 --------
 
--player movement/rotation
-	-put player entity at center
-	-make player entity rotatable
-	-NOTE: all entity's sizes will have to be scaled depending on the
-	window size
+-NOTE: all entity's sizes will have to be scaled depending on the
+window size
+	-this should be done when the World class creates the entities
 
 
 
@@ -38,6 +36,7 @@ Eventually:
 Considerable:
 -------------
 
+-minimap
 -back-end
 	-user can log in, log out, and sign in, with the back-end doing
 	this authentication

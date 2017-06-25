@@ -8,6 +8,27 @@ World::World(sf::RenderWindow & window, FontHolder & fonts)
   , mWorldView(window.getDefaultView())
   , mTextures()
   , mFonts(fonts)
+  , mPlayer()
 {
+  // Put player at center of the window
+  auto windowPos = window.getSize();
+  mPlayer.setPosition(windowPos.x / 2, windowPos.y / 2);
+}
 
+void World::draw()
+{
+  mPlayer.draw(mWindow);
+}
+
+void World::update(sf::Time dt)
+{
+  updateEntities(dt);
+}
+
+void World::updateEntities(sf::Time dt)
+{
+  // update enemies
+
+  // update player based on real-time inputs
+  mPlayer.update(dt);
 }
