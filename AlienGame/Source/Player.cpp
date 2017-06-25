@@ -17,7 +17,7 @@ void Player::draw(sf::RenderTarget & target) const
 void Player::update(sf::Time dt)
 {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-    mSprite.rotate(-1.f);
+    rotate(-1.f);
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-    mSprite.rotate(1.f);
+    rotate(1.f);
 }

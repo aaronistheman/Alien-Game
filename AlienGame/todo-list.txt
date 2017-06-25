@@ -2,9 +2,14 @@ Current:
 --------
 
 -player movement/rotation
-	-make player entity rotatable
-		-use the Player class to handle real time input
-			-PROBLEM: wrong origin
+	-fixing positional data
+		-set the origin, and then have a set/getTopLeftPosition()
+			-do this centering stuff in OneSpriteEntity(), since that's the class
+			that has the sprite first
+				-FIRST: set up some way to make sure this change actually does something
+					-set the position using setPosition() andd see where it is
+			-could also try to have a getCenterPosition() method somehow anyway
+		-make sure positional data is correct
 		-store rotation speed in player
 	-NOTE: all entity's sizes will have to be scaled depending on the
 	window size
@@ -41,6 +46,7 @@ Eventually:
 Considerable:
 -------------
 
+-minimap
 -back-end
 	-user can log in, log out, and sign in, with the back-end doing
 	this authentication
