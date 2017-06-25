@@ -13,5 +13,5 @@ public:
   void      update(sf::Time dt)   final;
 
 private:
-  // nothing yet, please check again later
+  static  float   RotationSpeed; // degrees per second
 };

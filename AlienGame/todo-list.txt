@@ -1,12 +1,9 @@
 Current:
 --------
 
--player movement/rotation
-	-fixing positional data
-		-store rotation speed in player
-	-NOTE: all entity's sizes will have to be scaled depending on the
-	window size
-		-this should be done when the World class creates the entities
+-NOTE: all entity's sizes will have to be scaled depending on the
+window size
+	-this should be done when the World class creates the entities
 
 
 
