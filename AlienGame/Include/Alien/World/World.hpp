@@ -31,11 +31,26 @@ public:
   void                  update(sf::Time dt);
   void                  updateEntities(sf::Time dt);
 
-private:
+private: // private methods
+
+  void              calculatePixelsPerWorldUnit(const sf::Vector2u& windowSize);
+
+private:  // private static members
+
+  // Dimensions of the world in "game units" (these units DO NOT change according to
+  // the window size).
+  static int         Width;
+  static int         Height;
+
+private:  // private members
   sf::RenderWindow&       mWindow;
   sf::View                mWorldView;
   TextureHolder           mTextures;
   FontHolder&             mFonts;
   
+  // For converting any length/speed/etc in units of window pixels to be in "game units".
+  int                     mWidthPixelsPerWorldUnit;
+  int                     mHeightPixelsPerWorldUnit;
+
   Player                  mPlayer;
 };

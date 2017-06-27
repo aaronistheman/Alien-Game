@@ -69,6 +69,8 @@ void Application::chooseWindowSize()
   // Check the resolution of the user's computer, and with this information,
   // decide the window width/height by picking the highest of the selectable
   // window sizes that is supported.
+  // Note that the window sizes should have the same aspect ratios, to make scaling
+  // (based on window size) produce equivalent results.
   auto userDesktop = sf::VideoMode::getDesktopMode();
   std::vector<std::pair<int, int>> selectableWindowSizes; // (width,height) pairs
   selectableWindowSizes.push_back(std::pair<int, int>(1800, 900));

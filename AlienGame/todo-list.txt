@@ -1,16 +1,17 @@
 Current:
 --------
 
--NOTE: all entity's sizes will have to be scaled depending on the
-window size
-	-this should be done when the World class creates the entities
-
+-create a system for scaling sizes/entities based on world size
+	-apply to Player's size
+		-TO TEST: temporarily have player's height equal half of window's height?
+-player can shoot projectiles
+-first enemy (see below for enemy types)
 
 
 Eventually:
 -----------
 
--player can shoot projectiles
+-pick better Player sprite
 -enemy movement
 -enemy types
 	-dummy (heads straight toward the player)
