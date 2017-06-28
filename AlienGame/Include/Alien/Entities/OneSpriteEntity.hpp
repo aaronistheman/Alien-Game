@@ -11,9 +11,13 @@
 class OneSpriteEntity : public Entity
 {
 public:
-  //OneSpriteEntity();
+  OneSpriteEntity();
   OneSpriteEntity(const sf::Vector2f& size);
+
+  void      setSize(const sf::Vector2f& size);
 
 protected:
   sf::RectangleShape      mSprite;
+
+  void    centerOrigin();
 };

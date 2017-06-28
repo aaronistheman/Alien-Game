@@ -14,11 +14,13 @@ World::World(sf::RenderWindow & window, FontHolder & fonts)
   , mWorldView(window.getDefaultView())
   , mTextures()
   , mFonts(fonts)
-  , mPlayer(sf::Vector2f(50.f, 50.f))
+  , mPlayer()
 {
   calculatePixelsPerWorldUnit(window.getSize());
   std::cout << "width pixels per world unit: " << mWidthPixelsPerWorldUnit << '\n';
   std::cout << "height ...: " << mHeightPixelsPerWorldUnit << '\n';
+
+  mPlayer.setSize(sf::Vector2f(50.f, 50.f));
 
   // Put player at center of the window
   auto windowPos = window.getSize();

@@ -7,12 +7,6 @@ Current:
 		-Idea #1) World COMPLETELY decides Player size
 			-DONE: Player will have to take sizes params (in pixel units) in constructor
 			-these appropriate pixel units will have to be decided in World constructor
-		-Idea #2) Player knows its dimensions in units of scaled pixels, so World just needs
-		to pass it the conversion factor
-			-PROBLEM: then Player has to know what scaled pixels are
-			-store these dimensions vars in Player
-			-pass the conversion factors
-		-Idea #3) same as idea #2, but dimensions are stored in data tables instead
 			
 -player can shoot projectiles
 -first enemy (see below for enemy types)
@@ -47,6 +41,7 @@ Eventually:
 Considerable:
 -------------
 
+-data tables
 -minimap
 -back-end
 	-user can log in, log out, and sign in, with the back-end doing
