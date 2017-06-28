@@ -1,9 +1,19 @@
 Current:
 --------
 
+-NOTE: don't forget about testing!!
 -create a system for scaling sizes/entities based on world size
-	-apply to Player's size
-		-TO TEST: temporarily have player's height equal half of window's height?
+	-apply to Player's size (TO TEST: temporarily have player's height equal half of window's height?)
+		-Idea #1) World COMPLETELY decides Player size
+			-DONE: Player will have to take sizes params (in pixel units) in constructor
+			-these appropriate pixel units will have to be decided in World constructor
+		-Idea #2) Player knows its dimensions in units of scaled pixels, so World just needs
+		to pass it the conversion factor
+			-PROBLEM: then Player has to know what scaled pixels are
+			-store these dimensions vars in Player
+			-pass the conversion factors
+		-Idea #3) same as idea #2, but dimensions are stored in data tables instead
+			
 -player can shoot projectiles
 -first enemy (see below for enemy types)
 

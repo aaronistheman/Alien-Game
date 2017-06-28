@@ -7,7 +7,8 @@
 class Player : public OneSpriteEntity
 {
 public:
-  Player();
+  //Player();
+  Player(const sf::Vector2f& size);
 
   void      draw(sf::RenderTarget& target) const final;
   void      update(sf::Time dt)   final;

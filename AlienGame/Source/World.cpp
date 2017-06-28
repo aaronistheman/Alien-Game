@@ -14,7 +14,7 @@ World::World(sf::RenderWindow & window, FontHolder & fonts)
   , mWorldView(window.getDefaultView())
   , mTextures()
   , mFonts(fonts)
-  , mPlayer()
+  , mPlayer(sf::Vector2f(50.f, 50.f))
 {
   calculatePixelsPerWorldUnit(window.getSize());
   std::cout << "width pixels per world unit: " << mWidthPixelsPerWorldUnit << '\n';
