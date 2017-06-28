@@ -15,6 +15,9 @@
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/System/Time.hpp>
 
+#include <unordered_map>
+
+
 // Forward declaration
 namespace sf
 {
@@ -34,6 +37,7 @@ public:
 private: // private methods
 
   void              calculatePixelsPerWorldUnit(const sf::Vector2u& windowSize);
+  void              fillEntityDimensions();
 
 private:  // private static members
 
@@ -53,4 +57,10 @@ private:  // private members
   int                     mHeightPixelsPerWorldUnit;
 
   Player                  mPlayer;
+
+  // With this, the World class can calculate the exact pixel dimensions to pass to each
+  // entity's constructor.
+  // typedef std::unordered_map<Entity::Type, std::pair<float, float>> EntityDimensionsMap;
+  typedef std::unordered_map<Entity::Type, sf::Vector2f> EntityDimensionsMap;
+  EntityDimensionsMap      mEntityDimensionsInGameUnits;
 };

@@ -19,6 +19,16 @@ public:
   virtual void    draw(sf::RenderTarget& target) const = 0;
   virtual void    update(sf::Time dt) = 0;
 
+  // Provides a way to use the name of an entity type (e.g. as a map key).
+  enum class Type
+  {
+    Player,
+
+    TypeCount
+  };
+
+  virtual Type    getType() = 0;
+
 private:
   // position on SFML coordinate system
   int     mPosX;

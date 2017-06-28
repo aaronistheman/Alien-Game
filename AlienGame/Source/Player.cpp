@@ -25,3 +25,10 @@ void Player::update(sf::Time dt)
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
     rotate(RotationSpeed * dt.asSeconds());
 }
+
+// I don't think there's a difference between using Player::Type or Entity::Type
+// as the return type, but I chose the former to decouple Player from Entity a bit more.
+Player::Type Player::getType()
+{
+  return Type::Player;
+}
